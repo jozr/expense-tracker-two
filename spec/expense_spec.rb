@@ -20,4 +20,8 @@ describe Expense do
   it 'returns the total of all the expenses' do
     Expense.total.should eq 2
   end
+
+  it 'returns all the purchases from a time period' do
+    Expense.return_by_dates('3/29', '4/1').should eq ['candy', 'guns']
+  end
 end
