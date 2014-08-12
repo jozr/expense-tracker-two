@@ -57,4 +57,10 @@ attr_accessor:category_id, :expense_id, :id, :total
     counter
   end
 
+  def exceed(category_id_input)
+    current_spending = monthly_cost(category_id_input)
+    result = DB.exec("SELECT budget FROM category WHERE id = #{category_id_input}")
+    budget = result.first['budget'].to_i
+    current_spending <= budget ? false : true
+  end
 end

@@ -33,4 +33,7 @@ describe Organizer do
     expect(@test_organizer.monthly_cost(@test_category_two.id)).to eq 2
   end
 
+  it 'returns true if you have exceeded your monthly budget, false if not' do
+    expect(@test_organizer.exceed(@test_category_two.id)).to eq false
+  end
 end
