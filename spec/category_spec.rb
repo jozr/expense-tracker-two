@@ -16,4 +16,5 @@ describe Category do
   it 'returns all saved categories' do
     expect(@test_category).to eq [@test_category]
   end
+
 end

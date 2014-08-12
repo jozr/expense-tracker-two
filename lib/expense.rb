@@ -17,7 +17,7 @@ attr_accessor:name, :cost, :date, :id
   end
 
   def self.return_by_dates(start_date, end_date)
-    results = DB.exec("SELECT * FROM expense WHERE date IN ('#{start_date}', '#{end_date}');")
+    results = DB.exec("SELECT * FROM expense WHERE date BETWEEN '#{start_date}' and '#{end_date}';")
     expense_names = []
     results.each do |result|
       expense_names << result['name']

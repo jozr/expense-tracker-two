@@ -18,10 +18,10 @@ describe Expense do
   end
 
   it 'returns the total of all the expenses' do
-    Expense.total.should eq 2
+    Expense.total.should eq 22
   end
 
   it 'returns all the purchases from a time period' do
-    Expense.return_by_dates('3/29', '4/1').should eq ['candy', 'guns']
+    Expense.return_by_dates('8/29/2014', '9/1/2014').should eq ['candy', 'guns']
   end
 end

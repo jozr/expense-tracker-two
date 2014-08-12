@@ -18,14 +18,19 @@ describe Organizer do
   end
 
   it "returns all the expenses in a category" do
-    expect(@test_organizer.return_expenses(@test_category.id)).to eq ['candy']
+    expect(@test_organizer.return_expenses(@test_category_two.id)).to eq ['candy', 'guns', 'tire']
   end
 
   it 'returns the total of all the expenses in a specific category' do
-    expect(@test_organizer.return_category_total(@test_category.id)).to eq 1
+    expect(@test_organizer.return_category_total(@test_category_two.id)).to eq 22
   end
 
   it 'returns the percent of the total cost of a specific category' do
-    expect(@test_organizer.percent_of_cost(@test_category.id)).to eq 0.5
+    expect(@test_organizer.percent_of_cost(@test_category_two.id)).to eq 1
   end
+
+  it 'totals the cost of all category expenses in a 30 day period' do
+    expect(@test_organizer.monthly_cost(@test_category_two.id)).to eq 2
+  end
+
 end

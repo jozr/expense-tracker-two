@@ -3,7 +3,6 @@ require 'pry'
 
 class Category < Table_Butler
 
-attr_accessor:name, :id
-
+attr_accessor :name, :id, :budget
 
 end
